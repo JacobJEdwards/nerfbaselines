@@ -274,7 +274,7 @@ class StudentSplattingScooping(Method):
             nu_degree=100,
             C_burnin=5e5,
             burnin_iterations=7000,
-            iterations=40000,
+            iterations=10000,
         )
         args = parser.parse_args(args_list)
         return args

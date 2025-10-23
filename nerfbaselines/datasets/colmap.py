@@ -270,7 +270,7 @@ def load_colmap_dataset(path: Union[Path, str],
     rel_colmap_path = colmap_path
     colmap_path = (path / colmap_path).resolve()
     if images_path is None:
-        images_path = "images_8_variance"
+        images_path = "images_8_contrast"
     rel_images_path = images_path
     images_path = (path / images_path).resolve()
     if masks_path is None:

@@ -442,7 +442,7 @@ def load_nerfstudio_dataset(path: Union[Path, str], split: str, downscale_factor
     #     applied_scale = float(meta["applied_scale"])
     #     scale_factor *= applied_scale
     if downscale_factor > 1:
-        images_root = data_dir / f"images_8_variance"
+        images_root = data_dir / f"images_8_contrast"
         masks_root = data_dir / f"masks_{downscale_factor}"
         all_cameras = _downscale_cameras(all_cameras, downscale_factor)
     else:
