@@ -12,9 +12,8 @@ WildGaussiansMethodSpec: MethodSpec = {
         "environment_name": "wild-gaussians",
         "python_version": "3.11",
         "install_script": r"""
-git clone https://github.com/jkulhanek/wild-gaussians.git
+git clone https://github.com/jacobjedwards/wild-gaussians.git
 cd wild-gaussians
-git checkout 8e58093a32dd7f9dbba19e482b24904c168fd379
 if [ "$NERFBASELINES_DOCKER_BUILD" != "1" ]; then
 conda install -y gcc_linux-64=11 gxx_linux-64=11 make=4.3 cmake=3.28.3 -c conda-forge
 fi

@@ -168,7 +168,7 @@ def download_tanksandtemples_dataset(path: str, output: str) -> None:
         "type": "object-centric",
         "downscale_factor": downscale_factor,
         "loader_kwargs": {
-            "images_path": f"images_{downscale_factor}",
+            "images_path": f"images_{downscale_factor}_variance",
             "colmap_path": f"sparse_{downscale_factor}/0",
         },
         "version": VERSION,
