@@ -13,6 +13,7 @@ WildGaussiansMethodSpec: MethodSpec = {
         "python_version": "3.11",
         "install_script": r"""
         conda deactivate
+        conda activate main
 """
     },
     "presets": {
