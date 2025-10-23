@@ -148,7 +148,7 @@ def download_mipnerf360_dataset(path: str, output: Union[Path, str]):
                     with atomic_output(output) as output_tmp:
                         output_tmp = Path(output_tmp)
                         res = _scenes360_res[scene]
-                        images_path = f"images_{res}_variance"
+                        images_path = f"images_8_variance"
                         for info in z.infolist():
                             if not info.filename.startswith(scene + "/"):
                                 continue

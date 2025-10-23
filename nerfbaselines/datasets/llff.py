@@ -18,13 +18,13 @@ def load_llff_dataset(path: Union[Path, str], split: str, features):
     path = Path(path)
 
     hold_every: int = 8
-    for file in ("poses_bounds.npy", "sparse", f"images_{downscale_factor}_variance"):
+    for file in ("poses_bounds.npy", "sparse", f"images_8_variance"):
         if not (path / file).exists():
             raise DatasetNotFoundError(f"Path {path} does not contain a LLFF dataset. Missing file: {path / file}")
     assert split in ["train", "test"], "split must be one of 'train', 'test'"
 
     poses_bounds = np.load(path / "poses_bounds.npy")
-    image_paths = sorted(path.glob(f"images_{downscale_factor}_variance/*.png"))
+    image_paths = sorted(path.glob(f"images_8_variance/*.png"))
     assert len(image_paths) > 0, f"No images found in {path / f'images_{downscale_factor}'}"
     assert len(poses_bounds) == len(image_paths), f"Mismatch between number of images ({len(image_paths)}) and number of poses ({len(poses_bounds)})!"
 
