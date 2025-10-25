@@ -156,7 +156,7 @@ class GoDataset(GoBaseDataset):
             config.is_render = is_render
 
     def load_feat(self, path, feat_rate, factor):
-        image_dir = f'images_8_contrast'
+        image_dir = f'images_8_variance'
         format = path[-4:]
         feat_path = path.replace(image_dir, f'features_{feat_rate}').replace(format, '.npy')
         feat = np.load(feat_path)

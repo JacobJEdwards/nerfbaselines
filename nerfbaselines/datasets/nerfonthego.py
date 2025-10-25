@@ -75,10 +75,10 @@ def preprocess_nerfonthego_dataset(path, output):
     scale = _get_downscale_factor(path)
     logging.info(f"Downsizing images by factor of {scale}")
 
-    os.makedirs(os.path.join(output, f'images_8_contrast'), exist_ok=True)
+    os.makedirs(os.path.join(output, f'images_8_variance'), exist_ok=True)
     for image in os.listdir(os.path.join(output, 'images')):
         os.system(f"convert {os.path.join(output, 'images', image)} -resize {100 / scale}% -quality 100 "
-                  f"{os.path.join(output, f'images_8_contrast', image)}")
+                  f"{os.path.join(output, f'images_8_variance', image)}")
 
     # Save metadata
     metadata = {
@@ -102,7 +102,7 @@ def load_nerfonthego_dataset(path: str, split: str, **kwargs) -> UnloadedDataset
 
     scale = _get_downscale_factor(path)
     dataset = load_colmap_dataset(path, split=split, 
-                                  images_path=f"images_8_contrast",
+                                  images_path=f"images_8_variance",
                                   **kwargs)
     metadata = dataset["metadata"]
     metadata["id"] = "nerfonthego"
